@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://c15qdgys6wmw1"]
+
+[ext_resource type="Texture2D" uid="uid://bctgmtshbrrea" path="res://apple.png" id="1_1orcl"]
+[ext_resource type="Script" path="res://main.gd" id="1_sguaj"]
+[ext_resource type="Texture2D" uid="uid://byqewtkiel26" path="res://banana.png" id="2_1iwq8"]
+[ext_resource type="Texture2D" uid="uid://b6g4a4g2ipto5" path="res://grocery_store.jpg" id="2_l34oy"]
+[ext_resource type="Texture2D" uid="uid://cmr4dp74uhghc" path="res://cherry.png" id="3_l3agp"]
+[ext_resource type="Texture2D" uid="uid://yugcentxconw" path="res://watermelon.png" id="4_uv6id"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_db3bg"]
+bg_color = Color(0.764402, 0.415302, 0.96325, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sguaj")
+
+[node name="GroceryStore" type="Sprite2D" parent="."]
+position = Vector2(578, 383)
+scale = Vector2(1.15234, 1.15234)
+texture = ExtResource("2_l34oy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -164.0
+offset_right = 336.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_db3bg")
+text = "CLICK A FRUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_top = 30
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="Apple" type="Button" parent="VBoxContainer/MarginContainer/GridContainer" groups=["Buttons"]]
+self_modulate = Color(1, 0.394041, 0.998337, 1)
+layout_mode = 2
+text = "Apple"
+icon = ExtResource("1_1orcl")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Banana" type="Button" parent="VBoxContainer/MarginContainer/GridContainer" groups=["Buttons"]]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "Banana"
+icon = ExtResource("2_1iwq8")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Cherry" type="Button" parent="VBoxContainer/MarginContainer/GridContainer" groups=["Buttons"]]
+self_modulate = Color(0.994049, 0, 0.214291, 1)
+layout_mode = 2
+text = "Cherry
+"
+icon = ExtResource("3_l3agp")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Watermelon" type="Button" parent="VBoxContainer/MarginContainer/GridContainer" groups=["Buttons"]]
+self_modulate = Color(0.0588235, 1, 0.00392157, 1)
+layout_mode = 2
+text = "Watermelon"
+icon = ExtResource("4_uv6id")
+icon_alignment = 1
+vertical_icon_alignment = 0
